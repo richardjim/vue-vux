@@ -8,9 +8,9 @@ const store = createStore({
     increment(state, payload) {
       state.counter = state.counter + payload;
     },
-    decrement(state, payload) {
-      state.counter = state.counter - payload;
-    },
+    // decrement(state, payload) {
+    //   state.counter = state.counter - payload;
+    // },
   },
 });
 
