@@ -32,7 +32,7 @@ export default {
 
             try {
                 await store.dispatch('signup', { email: email.value, password: password.value })
-                router.push('/')
+                router.push('/login')
             } catch (error) {
                 error.value = error.message
             }
