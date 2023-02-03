@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    <h1>Count:{{ counter }}</h1>
-    <button @click="increment(1)">Increment</button>
-    <button @click="increment(-1)">Decrement</button>
     <div v-for="blog in blogs" :key="blog.id">
       <div class="blog">
         <h3>{{ blog.title }}</h3>
@@ -20,8 +17,8 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
-import { useStore } from 'vuex'
+import { ref } from 'vue'
+
 
 export default {
   setup() {
@@ -31,16 +28,11 @@ export default {
       { title: 'Mario vs Luigi, Ultimate Showdown', id: 3 },
     ])
 
-    const store = useStore()
-    const counter = computed(() => store.state.counter)
 
-    const increment = (counter) => {
-      store.commit('increment', counter)
-    }
+
+
     return {
-      blogs,
-      counter,
-      increment,
+      blogs
 
     }
   },
